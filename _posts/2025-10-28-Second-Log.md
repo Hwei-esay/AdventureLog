@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "My First Log"
+title:  "My Second Log"
 ---
 
 ## 2025-10-28 第二篇生存日志
