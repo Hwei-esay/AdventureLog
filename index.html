@@ -1,28 +1,19 @@
 ---
 layout: default
 ---
-
-{% for post in site.posts limit:1 %}
-  <article class="module color3">
-    <h2>
-      <a class="red" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h2>
-    <time>{{ post.date| date: "%m/%d/%Y" }}</time>
-    <p>
-      {{ post.content | strip_html | truncate: 250 }}
-    </p>
-  </article>
-{% endfor %}
-
-{% for post in site.posts offset:1 limit:4 %}
-  <article class="module color3">
-    <h2>
-      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h2>
-    <time>{{ post.date| date: "%m/%d/%Y" }}</time>
-</article>
-{% endfor %}
-
-<section class="module color3">
-  <a href="{{ 'archives' | prepend: site.baseurl }}">More Posts &rarr;</a>
-</section>
+<div class="home">
+	<section class="site-header">
+		<h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a></h1>
+		{% include nav.html %}
+		{% include intro.html %}
+	</section>
+	<section>
+		<ul class="post-list">
+			{% for post in site.posts %}
+			<li>
+				<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+</div>

@@ -1,15 +1,21 @@
 # Site settings
-title:        "Adventure Log"
-description:  "Daily log of my adventure on earth."
-baseurl:      "/AdventureLog" # the subpath of your site, e.g. /blog/
-url:          "https://Hwei-esay.github.io" # the base hostname & protocol for your site
-permalink:    /:year/:title
-#github:       "yourusername"
-#twitter:      "yourusername"
-#email:        "mail@example.com"
-#disqus-id:    "example" #leave blank if you dont want comments.
+title: "AdventureLog"
+description: "Record my living details."
+baseurl: "/Adventurelog" # required if used under gh-pages branch, else (under master branch) just leave empty/blank
+url: ""
+author: "GHW"
 
 # Build settings
-markdown:     kramdown
-sass:
-    style: :compressed
+kramdown:
+  input: GFM
+permalink: pretty
+
+# Third-party services
+# just leave empty to disable it
+google_analytics:
+disqus_shortname: 
+
+plugins:
+  - jekyll-sitemap
+
+exclude: ["LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "script"]
